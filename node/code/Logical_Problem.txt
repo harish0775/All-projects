@@ -1,0 +1,45 @@
+1. Write a JavaScript function to find the lowest value in an array.
+
+function smallest(arr){
+    var lowest = arr[0];
+ 
+		for(var i=1; i<arr.length; i++){
+			if(arr[i] < lowest){
+				lowest = arr[i];   
+			}
+            console.log(lowest,i);
+		}	
+}
+ var arr  = [12,23,45,4,78,89];
+ smallest(arr)
+
+ 2. Write a JavaScript function that Convert an integer into a Roman Numeral in javaScript in array.
+        var RomanValue = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"];
+         // decimal number
+         var RomanNumber = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+         function decimalRoman(value) {
+            if (value <= 0 || value >= 4000){
+                  return "Is Greater than 1000 Or less than 1 ";
+            }
+               
+               var romanNumeral = "";
+            for (var i = 0; i<RomanValue.length; i++) {
+               while (value >= RomanNumber[i]) {
+                  value -= RomanNumber[i];
+                  romanNumeral += RomanValue[i];
+               }
+               
+            }      
+            return romanNumeral;
+         }
+         const value = "119";
+console.log(decimalRoman(value));
+
+3.  Write a JavaScript function to convert a binary number to a decimal number.
+
+
+
+ const binaryNumber = "110101";
+
+console.log(parseInt(binaryNumber, 2)); // base 2
+

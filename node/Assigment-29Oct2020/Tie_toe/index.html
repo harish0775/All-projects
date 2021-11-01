@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="Script.js"></script>
+    <style>
+      body {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 50px;
+      }
+      .grid-container {
+        height: 400px;
+        width: 400px;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        background-color: #21f379;
+        padding: 10px;
+      }
+      .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+      }
+      .result {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: content-box;
+        border: 0px;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="Game-container">
+      <div class="grid-container">
+        <button class="grid-item" onclick="change()" id="1" value="1">
+          <h3 id="result" class="result"></h3>
+        </button>
+        <button class="grid-item" onclick="change2()" id="2" value="2">
+          <h3 id="result2" class="result"></h3>
+        </button>
+        <button class="grid-item" onclick="change3()" id="3" value="3">
+          <h3 id="result3" class="result"></h3>
+        </button>
+        <button class="grid-item" onclick="change4()" id="4" value="4">
+          <h3 id="result4" class="result"></h3>
+        </button>
+        <button class="grid-item" onclick="change5()" id="5" value="5">
+          <h3 id="result5" class="result"></h3>
+        </button>
+        <button class="grid-item" onclick="change6()" id="6" value="6">
+          <h3 id="result6" class="result"></h3>
+        </button>
+        <button class="grid-item" onclick="change7()" id="7" value="7">
+          <h3 id="result7" class="result"></h3>
+        </button>
+        <button class="grid-item" onclick="change8()" id="8" value="8">
+          <h3 id="result8" class="result"></h3>
+        </button>
+        <button class="grid-item" onclick="change9()" id="9" value="9">
+          <h3 id="result9" class="result"></h3>
+        </button>
+      </div>
+    </div>
+    <!-- <script>
+  
+  </scrip> -->
+  </body>
+</html>
