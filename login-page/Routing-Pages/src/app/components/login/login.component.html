@@ -1,0 +1,121 @@
+<div class="container vh-100">
+  <div class="row justify-content-center h-100">
+    <div class="card my-auto shadow">
+      <div class="card-body px-5">
+        <div class="text-center">
+          <fa-icon [icon]="faLock" class="fa-3x"></fa-icon>
+        </div>
+        <div class="text-center">
+          <h2>Welcome</h2>
+        </div>
+        <p style="color: lightslategray; text-align: center">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please enter your
+          login details&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </p>
+        <form
+          [formGroup]="loginForm"
+          (ngSubmit)="onSubmit()"
+          #localform="ngForm"
+        >
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              class="form-control"
+              formControlName="email"
+              name="email"
+            />
+            <div class="invalid-feedback is-invalid ">
+              <strong>Invalid email</strong>
+            </div>
+          </div>
+          <!-- <small> {{ localform.submitted }}</small> -->
+          <div class="form-group">
+            <input
+              type="password"
+              password="NgModel"  
+              placeholder="Password"
+              id="validationCustom02"
+              class="form-control"
+              formControlName="password"
+              name="confirm_password"
+              maxlength="25"
+              
+            />
+            <!-- [class.is-invalid]="loginForm.get('password')?.invalid"
+              [class.is-valid]="loginForm.get('email')?.valid" -->
+            <!-- <div class="invalid-feedback is-invalid ">
+              <strong>Invalid password</strong>
+            </div> -->
+              <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+                <!-- <div *ngIf="f.password.errors.required">Password is required.</div> -->
+                <!-- <div *ngIf = "f.password.errors.re"> Password is required</div> -->
+                <div *ngIf="f.confirm_password.errors">Password e.g Admin@1234</div>
+            </div>
+                <!-- <div class="invalid-feedback is-invalid ">
+              <strong> Invalid password</strong>
+            </div> -->
+
+          </div>
+
+          
+             <!-- <input type="password" [(ngModel)]="userdata.password" name="password" placeholder="Password" class="form-control" required #password="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" /> -->
+ <!-- <div *ngIf="password.invalid && (loginForm.submitted || password.touched)" class="alert alert-danger">
+
+ </div> -->
+
+   <!-- confirm_password -->
+          <div class="form-group">
+            <input
+              type="password"
+              
+              id="confirm_password"
+              placeholder="confirm-password"
+              id="validationCustom02"
+              class="form-control"
+              formControlName="confirm_password"
+              name="confirm_password"
+              maxlength="25"
+             
+              
+            />
+            <!-- <div class="invalid-feedback is-invalid ">
+              <strong>Invalid confirm_password</strong>
+            </div> -->
+            <div *ngIf="f.confirm_password.touched && f.confirm_password.invalid" class="alert alert-danger">
+                <div *ngIf="f.confirm_password.errors">Invalid password</div>
+            </div>
+            <!-- <div class="invalid-feedback is-invalid">
+              <strong>Invalid Confirm-password</strong>
+            </div> -->
+          </div>
+          
+          <button
+            type="submit"
+            class="btn btn-primary w-100"
+            value="Login"
+            name=""
+            [disabled]="(!loginForm.valid)" 
+          >
+            Submit
+          </button>
+          <span></span>
+                      <!-- [disabled]="(!loginForm.valid)" -->
+
+          <h6 [hidden]="!loginForm.invalid" > Invalid UserName or password</h6>
+         
+        </form>
+      </div>
+      <div class="card-footer text-right">
+        <small><a routerLink="../forgot-password">Forgot Password</a></small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- [class.is-invalid] = "password-invalid && password-touched" name = "password"
+                            formControlName="password" name="password" maxlength="25"/>
+                         <small [class.d-none] = "password.valid || password.untouched"> 
+                             Show Error
+                         </small> -->

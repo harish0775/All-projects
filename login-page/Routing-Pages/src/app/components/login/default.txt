@@ -1,0 +1,36 @@
+while(!q1.empty() && !q2.empty())
+{
+    if(q1.front()>q2.front()) 
+    { q3.push_back(q1.front()); 
+      q1.pop_front(); }
+    else 
+    { q3.push_back(q2.front()); 
+      q2.pop_front(); }
+}
+
+// The following loops help add the rest 
+// of the elements that the above loop 
+// did not add.
+
+while(!q1.empty())
+{ q3.push_back(q1.front()); 
+  q1.pop_front();  }
+while(!q2.empty())
+{ q3.push_back(q2.front()); 
+  q2.pop_front();  }
+
+
+
+
+  Queue mergeQueues(Queue A, Queue B)
+{
+    Queue newQ;
+    while(A.nonempty() OR B.nonempty())
+    {
+        if (A.nonempty())
+            newQ.push(A.pop());
+        if (B.nonempty())
+            newQ.push(B.pop());
+    }
+    return newQ;
+}
